@@ -4,5 +4,5 @@ from blog import views
 
 urlpatterns = [
     path('', views.index),
-    path('test', views.test),
+    path('<int:pk>/', views.single_post_page),
 ]

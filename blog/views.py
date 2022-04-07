@@ -1,9 +1,20 @@
 from django.shortcuts import render
+from blog.models import Post
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'blog/index.html')
+    posts = Post.objects.all().order_by('-pk') # select * from post, -pk -> 내림차순
+    return render(request, 'blog/index.html',
+        {
+            'posts_':posts,
+        }
+    )
 
-def test(request):
-    return render(request, 'blog/test.html')
+def single_post_page(request, pk):
+    post = Post.objects.get(pk=pk) # select pk from post
+    return render(request, 'blog/single_post_page.html',
+        {
+            'post_':post
+        }
+    )
