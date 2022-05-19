@@ -52,7 +52,7 @@
                                 <i class="fas fa-tags"></i>
                                 {% for tag in p.tags.iterator %}
                                     <a href="{{ tag.get_absolute_url }}">
-                                        <span class="badge badge-pill badge-light">{{ tag }}</span>
+                                        <span class="badge badge-pill badge-warning">{{ tag }}</span>
                                     </a>
                                 {% endfor %}
                                 <br/>

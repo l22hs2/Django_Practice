@@ -1,6 +1,11 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from django.shortcuts import render
 from blog.models import Category, Post, Tag
+
+class PostCreate(CreateView): # "post_form.html" 이름으로 템플릿 생성해야 함.
+    model = Post
+    fields = ['title', 'hook_text', 'content', 'head_image', 'file_upload', 'category']
+
 
 class PostList(ListView):
     model = Post
