@@ -13,4 +13,4 @@ admin.site.register(Category, CategoryAdmin)
 class TagAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
-admin.site.register(Tag, TagAdmin)
+admin.site.register(Tag, TagAdmin) # 뒤에 오는건 뭔지
